@@ -2,7 +2,7 @@ const subjectURL = "https://real-time-registration.vercel.app/api/opened-subject
 const tableBody = document.querySelector("#subject-table tbody");
 const lastUpdatedText = document.getElementById("last-updated");
 
-async function fetchSubjects() {
+async function fetchSubjects() { 
   try {
     const res = await fetch(subjectURL);
     const data = await res.json();
