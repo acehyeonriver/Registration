@@ -1,6 +1,6 @@
 const https = require("https");
 
-module.exports = async (req, res) => {
+module.exports = async (req, res) => { 
   const semesterId = req.query.semesterId;
   if (!semesterId) return res.status(400).json({ error: "semesterId is required" });
 
