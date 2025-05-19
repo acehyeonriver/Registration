@@ -1,10 +1,11 @@
-const subjectURL = "https://real-time-registration.vercel.app/api/opened-subjects?semesterId=d0496450-a975-4f4c-99fb-9d77ebf4ef09";
+const subjectURL = "/api/opened-subjects?semesterId=d0496450-a975-4f4c-99fb-9d77ebf4ef09";
 const tableBody = document.querySelector("#subject-table tbody");
 const lastUpdatedText = document.getElementById("last-updated");
 
-async function fetchSubjects() { 
+async function fetchSubjects() {
   try {
     const res = await fetch(subjectURL);
+    if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
     const data = await res.json();
 
     tableBody.innerHTML = "";
